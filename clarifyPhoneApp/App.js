@@ -11,7 +11,6 @@ export default function App() {
       <StatusBar style="auto" />
       {/* <Button> Login</Button> */}
       <Input/>
-      
     </View>
   );
 }
