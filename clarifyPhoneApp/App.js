@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Button from './components/buttons/Button';
+import Input from './components/inputs/input';
 
 export default function App() {
   return (
@@ -8,8 +9,8 @@ export default function App() {
 
       <Text> Clarify </Text>
       <StatusBar style="auto" />
-      <Button> Login</Button>
-      
+      {/* <Button> Login</Button> */}
+      <Input/>
     </View>
   );
 }
