@@ -26,11 +26,22 @@ class Inputs extends Component {
   render() {
     return (
       <View style={styles.container}>
+
+        <Text style={{
+        fontFamily: 'San Francisco', 
+        fontSize: 50, 
+        flex: 0.5, 
+        justifyContent: 'center', 
+        alignItems: 'center',
+        }}> Clarify </Text> 
+
+
         <TextInput
           style={styles.input}
           underlineColorAndroid="transparent"
           placeholder="Email"
-          placeholderTextColor="#9a73ef"
+          placeholderTextColor="gray"
+          
           autoCapitalize="none"
           onChangeText={this.handleEmail}
         />
@@ -39,7 +50,7 @@ class Inputs extends Component {
           style={styles.input}
           underlineColorAndroid="transparent"
           placeholder="Password"
-          placeholderTextColor="#9a73ef"
+          placeholderTextColor="gray"
           autoCapitalize="none"
           onChangeText={this.handlePassword}
         />
@@ -51,12 +62,14 @@ class Inputs extends Component {
 export default Inputs;
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 23,
+    paddingTop: 10,
+    
+    
   },
   input: {
     margin: 15,
     height: 40,
-    borderColor: "#7a42f4",
+    borderColor: "#783300",
     borderWidth: 1,
   },
   submitButton: {
@@ -66,6 +79,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   submitButtonText: {
+    fontFamily: "San Francisco",
     color: "white",
   },
 });

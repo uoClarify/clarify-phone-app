@@ -46,7 +46,12 @@ export default function App() {
         <View
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
-          <Text style={{ fontSize: 35, fontWeight: "bold", marginBottom: 20 }}>
+          <Text style={{ 
+            fontSize: 15, 
+          
+            marginBottom: 5, 
+            color: "white"
+            ,}}>
             {" "}
             Welcome
           </Text>
@@ -61,7 +66,8 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
-      <Text style={{fontFamily: 'Georgia', fontSize: 40, flex: 0.5, justifyContent: 'center', alignItems: 'center'}}> Clarify </Text> 
+      
+
       <StatusBar style="auto" />
 
       <Input style={styles.box}/> 
@@ -69,17 +75,19 @@ export default function App() {
       {user && <ShowUserInfo />}
       {user === null && (
         <>
-          <Text style={{ fontSize: 35, fontWeight: "bold" }}> Welcome</Text>
+          
           <Text
             style={{
-              fontSize: 35,
+              fontSize: 20,
               fontWeight: "bold",
-              marginBottom: 20,
-              color: "gray",
+              marginBottom: 5,
+              fontFamily: "San Francisco",
+              
+              color: "white",
             }}
           >
             {" "}
-            Please login
+            Login To Google
           </Text>
           <Button
             disabled={!request}
@@ -101,6 +109,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor:'#89CFF0',
   },
   image: {
     flex: 1,
@@ -111,7 +120,7 @@ const styles = StyleSheet.create({
   text: {
     color: "black",
     fontSize: 34,
-    lineHeight: 84,
+    lineHeight: 10,
     fontWeight: "bold",
     textAlign: "center",
     backgroundColor: "#3e7fc1",

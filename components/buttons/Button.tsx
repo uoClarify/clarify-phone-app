@@ -14,14 +14,16 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 4,
-    elevation: 3,
-    backgroundColor: 'black',
+    padding: 10,
+    margin: 10,
+    height: 40,
+    width: 200,
+    backgroundColor: '#783300',
+    
   },
   text: {
     fontSize: 16,
+    fontFamily: "San Francisco",
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
