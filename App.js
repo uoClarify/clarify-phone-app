@@ -61,10 +61,10 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
-      {/* <Text style={{fontFamily: 'Georgia', fontSize: 40, flex: 0.5, justifyContent: 'center', alignItems: 'center'}}> Clarify </Text>  */}
+      <Text style={{fontFamily: 'Georgia', fontSize: 40, flex: 0.5, justifyContent: 'center', alignItems: 'center'}}> Clarify </Text> 
       <StatusBar style="auto" />
 
-      {/* <Input style={styles.box}/>  */}
+      <Input style={styles.box}/> 
 
       {user && <ShowUserInfo />}
       {user === null && (
@@ -99,7 +99,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#2444",
     alignItems: "center",
     justifyContent: "center",
   },
