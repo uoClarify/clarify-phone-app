@@ -28,7 +28,7 @@ class Inputs extends Component {
       <View style={styles.container}>
 
         <Text style={{
-        fontFamily: 'San Francisco', 
+        fontFamily: 'System', 
         fontSize: 50, 
         flex: 0.5, 
         justifyContent: 'center', 
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   submitButtonText: {
-    fontFamily: "San Francisco",
+    fontFamily: "System",
     color: "white",
   },
 });

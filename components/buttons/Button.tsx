@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text, View, StyleSheet, Pressable } from 'react-native';
+import React from "react";
+import { Text, View, StyleSheet, Pressable } from "react-native";
 
 export default function Button(props) {
   const { onPress, title } = props;
@@ -12,21 +12,20 @@ export default function Button(props) {
 
 const styles = StyleSheet.create({
   button: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     padding: 10,
     margin: 10,
     height: 40,
     width: 200,
-    backgroundColor: '#783300',
-    
+    backgroundColor: "#783300",
   },
   text: {
     fontSize: 16,
-    fontFamily: "San Francisco",
+    fontFamily: "System",
     lineHeight: 21,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     letterSpacing: 0.25,
-    color: 'white',
+    color: "white",
   },
-})
+});

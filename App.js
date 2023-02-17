@@ -13,7 +13,6 @@ import Input from "./components/inputs/Input";
 WebBrowser.maybeCompleteAuthSession();
 
 export default function App() {
-  
   const [accessToken, setAccessToken] = React.useState(null);
   const [user, setUser] = React.useState(null);
   const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
@@ -46,12 +45,14 @@ export default function App() {
         <View
           style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
-          <Text style={{ 
-            fontSize: 15, 
-          
-            marginBottom: 5, 
-            color: "white"
-            ,}}>
+          <Text
+            style={{
+              fontSize: 15,
+              fontFamily: "System",
+              marginBottom: 5,
+              color: "white",
+            }}
+          >
             {" "}
             Welcome
           </Text>
@@ -66,23 +67,20 @@ export default function App() {
   };
   return (
     <View style={styles.container}>
-      
-
       <StatusBar style="auto" />
 
-      <Input style={styles.box}/> 
+      {/* <Input style={styles.box}/>  */}
 
       {user && <ShowUserInfo />}
       {user === null && (
         <>
-          
           <Text
             style={{
               fontSize: 20,
               fontWeight: "bold",
               marginBottom: 5,
-              fontFamily: "San Francisco",
-              
+              fontFamily: "System",
+
               color: "white",
             }}
           >
@@ -95,8 +93,7 @@ export default function App() {
               promptAsync();
             }}
             title="login"
-          >
-          </Button>
+          ></Button>
         </>
       )}
       {/* <Input/> */}
@@ -109,7 +106,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor:'#89CFF0',
+    backgroundColor: "#89CFF0",
   },
   image: {
     flex: 1,
