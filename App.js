@@ -7,14 +7,41 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import Button from "./components/buttons/Button";
 import Input from "./components/inputs/Input";
 
+import JSEncrypt from "node-jsencrypt";
+
 //web: 704352554180-brpb2f1epe5pqgu2cr9bupl6brk2g8qi.apps.googleusercontent.com
 //ios: 704352554180-qkkudrjr2n5bihdj33v736u5a2muu9c9.apps.googleusercontent.com
 
 WebBrowser.maybeCompleteAuthSession();
 
+async function testAuth() {
+  // TODO use actual mirror IP
+
+  // Get public key from server
+  let res = await fetch("http://10.0.1.150:8081/api/auth/pub");
+  const pubKey = await res.text();
+
+  // Encrypt user password
+  var encrypt = new JSEncrypt();
+  encrypt.setPublicKey(pubKey);
+  var ct = encrypt.encrypt("test"); // B64 of ciphertext
+
+  // Send auth request to server (w/ encrypted pw) to get API key
+  let formData = new FormData();
+  formData.append("email", "test");
+  formData.append("password", ct);
+  res = await fetch("http://10.0.1.150:8081/api/auth", {
+    method: "POST",
+    body: formData,
+  });
+
+  return res.text();
+}
+
 export default function App() {
   const [accessToken, setAccessToken] = React.useState(null);
   const [user, setUser] = React.useState(null);
+  const [result, setResult] = React.useState(null);
   const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
     clientId:
       "704352554180-brpb2f1epe5pqgu2cr9bupl6brk2g8qi.apps.googleusercontent.com",
@@ -23,6 +50,9 @@ export default function App() {
   });
 
   React.useEffect(() => {
+    // Crypto test
+    testAuth().then((x) => setResult(x));
+
     if (response?.type === "success") {
       setAccessToken(response.authentication.accessToken);
       accessToken && fetchUserInfo();
@@ -65,6 +95,8 @@ export default function App() {
       );
     }
   };
+
+  return <Text style={{ marginTop: 100 }}>{result}</Text>;
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
