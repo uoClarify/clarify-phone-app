@@ -1,39 +1,37 @@
 {
   "expo": {
-    "name": "clarifyPhoneApp",
-    "slug": "clarifyPhoneApp",
+    "name": "MyExpoApp",
+    "slug": "MyExpoApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "scheme": "exp://10.200.4.164:8082",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.nutannimkar.clarifyPhoneApp"
+      "infoPlist": {
+        "NSAppTransportSecurity": 
+          {
+            "NSAllowsArbitraryLoads":true
+          }
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "a306a5cb-17ed-4462-991d-76844b31691f"
-      }
     }
   }
 }
