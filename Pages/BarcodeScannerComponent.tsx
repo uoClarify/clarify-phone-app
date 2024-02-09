@@ -67,14 +67,14 @@ export default function BarcodeScannerComponent() {
           <Text style={styles.buttonText}>Scan Again</Text>
         </TouchableOpacity>
       )}
-      {/* {!scanned && (
+      
         <TouchableOpacity
           style={styles.scanButton}
           onPress={() => navigation.navigate("LoginPage")}
         >
           <Text style={styles.buttonText}> Login Page</Text>
         </TouchableOpacity>
-      )} */}
+      
     </View>
   );
 }

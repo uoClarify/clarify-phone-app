@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 function LandingPage({ navigation }: {navigation:any}){
   const {navigate} = navigation;
   setTimeout(() => {
-      navigate('BarcodeScannerComponent'); 
+      navigate('LoginPage'); 
   }, 2000); 
 
   return (
